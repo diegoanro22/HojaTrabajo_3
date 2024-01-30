@@ -1,6 +1,9 @@
-public class quickSort<T> implements iSort<T>{
+public class quickSort<T extends Comparable<T>> implements iSort<T>{
 
     public T[] sort(T[] array) {
+        
+        
+        return array;
     }
         
 
