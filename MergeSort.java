@@ -36,13 +36,22 @@ public class MergeSort<T extends Comparable<T>> implements iSort<T> {
      */
     private void merge(T[] array, T[] mitadIzquierda, T[] mitadDerecha) {
         int i = 0, j = 0, k = 0;
-
+    
         while (i < mitadIzquierda.length && j < mitadDerecha.length) {
             if (mitadIzquierda[i].compareTo(mitadDerecha[j]) <= 0) {
                 array[k++] = mitadIzquierda[i++];
             } else {
                 array[k++] = mitadDerecha[j++];
             }
+        }
+    
+        // Añadir los elementos restantes de las dos mitades (si los hay)
+        while (i < mitadIzquierda.length) {
+            array[k++] = mitadIzquierda[i++];
+        }
+    
+        while (j < mitadDerecha.length) {
+            array[k++] = mitadDerecha[j++];
         }
     }
 }
