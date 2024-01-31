@@ -5,6 +5,11 @@ public class QuickSort<T extends Comparable<T>> implements iSort<T>{
         return array;
     }
 
+    /**
+     * @param arr
+     * @param low
+     * @param high
+     */
     public void quickSort(T[] arr, int low, int high) {
         if (low < high) {
             int partitionIndex = partition(arr, low, high);
@@ -14,6 +19,12 @@ public class QuickSort<T extends Comparable<T>> implements iSort<T>{
         }
     }
 
+    /**
+     * @param arr
+     * @param low
+     * @param high
+     * @return
+     */
     public int partition(T[] arr, int low, int high) {
         T pivot = arr[high];
         int i = low - 1;
@@ -37,7 +48,3 @@ public class QuickSort<T extends Comparable<T>> implements iSort<T>{
         return i + 1;
     }
 }
-        
-
-    
-
