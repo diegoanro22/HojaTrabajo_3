@@ -25,12 +25,20 @@ public class RadixSort<T extends Comparable<T>> implements iSort<T> {
         return array;
     }
 
+    /**
+     * @param max
+     * @return
+     */
     private int getMaxValue(T max) {
-        // Esta función debe ser adaptada según el tipo de datos específico.
-        // Aquí se supone que T es Integer para simplificar el ejemplo.
         return (Integer) max;
     }
 
+
+    /**
+     * @param array
+     * @param exp
+     * @return
+     */
     private T[] countingSort(T[] array, int exp) {
         int n = array.length;
 
