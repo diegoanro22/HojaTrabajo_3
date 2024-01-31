@@ -14,28 +14,29 @@ import java.util.ArrayList;
 public class Archivo {
     private File archivo;
 
-    public Archivo(String nameArchivo){
-        archivo = new File(nameArchivo);
+    public Archivo(){
+        archivo = new File("Archivo.txt");
     }
 
-    public ArrayList<String> leerArchivo() throws IOException {
-        ArrayList<String> listPostfix = new ArrayList<>();
+    public Integer[] leerArchivo() throws IOException {
+        ArrayList<Integer> list = new ArrayList<>();
         FileReader fileReader = new FileReader(archivo);
         BufferedReader lector = new BufferedReader(fileReader);
 
         String linea;
-        while ((linea = lector.readLine()) != null){
+        while ((linea = lector.readLine()) != null) {
             String[] elementos = linea.split("\\s+");
             for (String elemento : elementos) {
-                if (elemento.matches("[a-zA-Z]+")){
-                }
-                else{
-                    listPostfix.add(elemento.toString());
+                if (elemento.matches("[0-9]+")) { // Verifica que el elemento es un número
+                    int numero = Integer.parseInt(elemento);
+                    list.add(numero);
                 }
             }
         }
         lector.close();
-        return listPostfix;
+        Integer[] array = list.toArray(new Integer[0]);
+        return array;
+    
     }
 
 

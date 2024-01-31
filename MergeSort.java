@@ -42,10 +42,6 @@ public class MergeSort<T extends Comparable<T>> implements iSort<T> {
                 array[k++] = mitadIzquierda[i++];
             } else {
                 array[k++] = mitadDerecha[j++];
-
-
-
-                System.out.println("Prueba para verificar el push de la clase Merge Sort, borrar una vez hecho el push");
             }
         }
     }
